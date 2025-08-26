@@ -5,8 +5,11 @@
 
 export const runtime = 'edge';
 
-export default function handler(req) {
-  return new Response(JSON.stringify({ message: 'Hello from Edge!' }), {
-    headers: { 'Content-Type': 'application/json' },
-  });
+export async function GET() {
+  return new Response(
+    JSON.stringify({ message: 'Hello from Edge Runtime!' }),
+    {
+      headers: { 'Content-Type': 'application/json' },
+    }
+  );
 }
